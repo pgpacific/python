@@ -2,6 +2,8 @@
 Program to compute tax based on the slabs
 Example program by Prashant Joshi
 
+Note: Tax computation is done keeping the slabs in mind
+
 """
 
 # function to compute the tax
