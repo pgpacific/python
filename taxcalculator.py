@@ -9,23 +9,26 @@ Note: Tax computation is done keeping the slabs in mind
 # function to compute the tax
 def computeTax(taxableincome):
 
-    if (taxableincome <= 500000):
+    if (taxableincome <= firstslab):
         totaltax = 0
         print("\nDebug: No Tax")
     # tax only the amount in the slab
-    if (taxableincome > 500000 and taxableincome <= 1000000):
+    if (taxableincome > firstslab and taxableincome <= secondslab):
         totaltax = (taxableincome-500000) * taxslab1
         if (debug == 1):
             print("\nDebug: Slab 1")
 
-    if (taxableincome > 1000000):
-        tax1 = (taxableincome - 1000000) * taxslab2
-        tax2 = (500000) * taxslab1
+    if (taxableincome > secondslab):
+        tax1 = (taxableincome - secondslab) * taxslab2
+        tax2 = (firstslab) * taxslab1
         totaltax = tax1 + tax2
         if (debug == 1):
             print("\nDebug: Big slab")
 
     return totaltax
+
+firstslab=500000
+secondslab=1000000
 
 more=1
 debug=1
